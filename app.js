@@ -21,6 +21,8 @@ app.post('/store-user', function(req, res){
     const userName = req.body.userName; 
     const filePath = path.join(__dirname, 'data', 'users.json');
     const fileData = fs.readFileSync(filePath);
+    const existingUsers = JSON.parse(fileData);
+    existingUsers.push(userName);
     fs.writeFileSync(filePath,)
     res.send('<h1>UserName Stored!</h1>')
 
