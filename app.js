@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 //using built in method of node js which is require
 
 const express= require('express');
