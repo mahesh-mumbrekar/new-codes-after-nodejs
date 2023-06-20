@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 //using built in method of node js which is require
 
@@ -18,7 +19,8 @@ app.get('/', function (req, res) {
 
 app.post('/store-user', function(req, res){
     const userName = req.body.userName; 
-    console.log(userName);
+    const filePath = path.join(__dirname, 'data', 'users.json');
+    fs.writeFileSync(filePath,)
     res.send('<h1>UserName Stored!</h1>')
 
 })
